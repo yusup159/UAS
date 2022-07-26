@@ -1,0 +1,56 @@
+package app
+
+class Pekerjaan {
+        var Pekerjaan: String =""
+        var Gaji :Int=0
+        var Komisi : Int=0
+        var Tunjangan_Transportasi :Int=0
+        var Tunjangan_Keluarga:Int=0
+        var Total_Gaji:Int=0
+    }
+package app
+
+fun main(){
+    val P1 =Pekerjaan()
+    P1.Pekerjaan ="Programer"
+    P1.Gaji =4000000
+    P1.Komisi = 2000000
+    P1.Total_Gaji=P1.Gaji+P1.Komisi
+
+    val P2=Pekerjaan()
+    P2.Pekerjaan ="Desainer"
+    P2.Komisi =1500000
+    P2.Tunjangan_Transportasi= 500000
+    P2.Gaji= 5000000
+    P2.Total_Gaji=P2.Komisi+P2.Gaji+P2.Tunjangan_Transportasi
+
+    val P3=Pekerjaan()
+    P3.Pekerjaan="Akuntan"
+    P3.Komisi = 2500000
+    P3.Tunjangan_Transportasi= 1000000
+    P3.Tunjangan_Keluarga = 4000000
+    P3.Gaji=6000000
+    P3.Total_Gaji= P3.Gaji+P3.Komisi+P3.Tunjangan_Transportasi+P3.Tunjangan_Keluarga
+
+    println("Jenis Pekerjaan")
+    println("1. Programer")
+    println("2.Desainer")
+    println("3.Akuntan")
+    println("Silahkan Pilih Pekerjaan ")
+    val pkj = readLine()!!.toInt()
+    if (pkj==1){
+        println("Jenis Pekerjaan ${P1.Pekerjaan}")
+        println("Total Gaji ${P1.Total_Gaji}")
+    }
+    else if (pkj==2){
+        println("Jenis Pekerjaan ${P2.Pekerjaan}")
+        println("Total Gaji ${P2.Total_Gaji}")
+    }
+    else if (pkj==3){
+        println("Jenis Pekerjaan ${P3.Pekerjaan}")
+        println("Total Gaji ${P3.Total_Gaji}")
+    }
+    else{
+        println("Anda Salah Memasukan Pilihan Pekerjaan")
+    }
+}
