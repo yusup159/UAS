@@ -1,0 +1,125 @@
+open class UASBP {
+    //objek
+    var hargajual: Int=0
+    var hargabeli: Int=0
+    var jumlah:Int=0
+    var pajak:Double=0.0
+    var total:Double=0.0
+
+}
+fun main(){
+    //header
+    println("-----------------------------------------")
+    println("---------PROGRAM JUAL BELI EMAS----------")
+    println("-----------------------------------------")
+    println("Daftar Transaksi:")
+    println("[1] Beli Emas")
+    println("[2] Beli Emas")
+    print("Masukan Pilihan anda : ")
+    val pilih= readLine()!!.toInt()
+    if (pilih==1){
+        print("Apakah Anda Memiliki NPWP y/n")
+        val npwp = readLine()
+        if (npwp=="y"){
+            val jual=UASBP()
+            jual.hargabeli=850000
+
+            println("Masukan Berat Emas : ")
+            val berat= readLine()!!.toInt()
+            jual.jumlah=berat*jual.hargabeli
+            jual.pajak= jual.jumlah *0.0045
+            jual.total=jual.pajak+jual.hargajual
+
+            if (berat>=0.05||berat<=80){
+                println("${jual.jumlah}")
+                println("Harga Beli = ${jual.jumlah}")
+                println("Pajak ${jual.pajak}")
+            }
+            else{
+                println("Anda Salah Memasukan Berat")
+            }
+        }
+        else if (npwp=="n"){
+            val jual=UASBP()
+            jual.hargabeli=850000
+            println("Masukan Berat Emas : ")
+            val berat= readLine()!!.toInt()
+            jual.jumlah=berat*jual.hargabeli
+            jual.pajak= jual.jumlah *0.009
+            jual.total=jual.pajak+jual.hargajual
+            if (berat>=0.05||berat<=80){
+                println("Harga Beli = ${jual.jumlah}")
+                println("Pajak ${jual.pajak}")
+
+
+            }
+            else{
+                println("Anda Salah Memasukan Berat")
+            }
+        }
+        else{
+            println("anda salah menginputkan npwp")
+        }
+
+
+
+    }
+    else if (pilih==2){
+        print("Apakah Anda Memiliki NPWP y/n")
+        val npwp = readLine()
+        if (npwp=="y"){
+            val beli=UASBP()
+            beli.hargajual=900000
+            println("Masukan Berat Emas : ")
+            val berat= readLine()!!.toInt()
+            beli.jumlah=berat*beli.hargajual
+            beli.pajak=beli.hargabeli*1.5
+            beli.total=beli.pajak+beli.jumlah
+            when(berat){
+                in 1..100->{
+                    println("======================================================")
+                    println("====================NOTA BELANJA======================")
+                    println("======================================================")
+                    println("Harga Beli : Rp ${beli.jumlah}")
+                    println("Pajak : Rp ${beli.pajak}")
+                    println("Harga Pembelian : Rp ${beli.total}")
+                }
+                else->{
+                    println("Penjualan Minimum adalah 1 gram dan Maximum 100 gram")
+                }
+            }
+        }
+        else if (npwp=="n"){
+            val beli=UASBP()
+            beli.hargajual=900000
+            println("Masukan Berat Emas : ")
+            val berat= readLine()!!.toInt()
+            beli.jumlah=berat*beli.hargajual
+            beli.pajak=beli.hargabeli*3.0
+            beli.total=beli.pajak+beli.jumlah
+            when(berat){
+                in 1..100->{
+                    println("======================================================")
+                    println("====================NOTA BELANJA======================")
+                    println("======================================================")
+                    println("Harga Beli : Rp ${beli.jumlah}")
+                    println("Pajak : Rp ${beli.pajak}")
+                    println("Harga Pembelian : Rp ${beli.total}")
+                }
+                else->{
+                    println("Penjualan Minimum adalah 1 gram dan Maximum 100 gram")
+                }
+            }
+        }
+        else{
+            println("anda salah menginputkan npwp")
+        }
+
+
+    }
+    else{
+        println("Anda salah memasukan pilihan")
+    }
+
+
+}
