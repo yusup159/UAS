@@ -1,0 +1,20 @@
+//struktur kontrol keputusan 
+fun main() {
+    print("Silahkan masukan sks")
+    val Sks = readLine()!!.toInt()
+    when (Sks) {
+        24 -> println(" Total Tagihan 1 = ")
+        22 -> println(" Total Tagihan 2 =")
+        18 -> println(" Total Tagihan 3 =")
+        else -> println(" Anda Salah Memasukan Jumlah SKS")
+    }
+}
+
+// struktur kontrol perulangan
+fun main(args: Array<String>){
+    var angka = 0
+    while(angka <= 5){
+        println("Sukses")
+        angka++
+    }
+}
