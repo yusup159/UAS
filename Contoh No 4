@@ -1,0 +1,14 @@
+fun tampil (n1:String){
+    println("INFO 1: $n1")
+}
+fun tampil (n2:Int){
+    println("INFO 3: $n2")
+}
+fun tampil (n3:Double){
+    println("INFO 3: $n3")
+}
+fun main(){
+     tampil(n1 = "Yang Atas")
+    tampil(n2 = 300)
+    tampil(n3 = 0.3)
+}
